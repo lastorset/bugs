@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<style>
+    @font-face {
+        font-family: FiraCode;
+        src: url(FiraCode-Retina.otf) format('opentype');
+    }
+
+    .forced-ligatures {
+        font-family: FiraCode;
+        /* Chromium does not follow the spec, so the following is required to get
+           contextual alternates: */
+        font-variant-ligatures: contextual;
+    }
+
+    .normal-ligatures {
+        font-family: FiraCode;
+        /* 'normal' implies 'contextual', see
+           http://www.w3.org/TR/css-fonts-3/#font-variant-ligatures-normal-value */
+        font-variant-ligatures: normal;
+    }
+</style>
+
+These two lines should be identical:
+
+<div class="forced-ligatures">
+    !== =&gt; &lt;&gt; []
+</div>
+
+<div class="normal-ligatures">
+    !== =&gt; &lt;&gt; []
+</div>
